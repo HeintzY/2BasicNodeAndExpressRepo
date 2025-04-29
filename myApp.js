@@ -20,9 +20,9 @@ app.get("/", function (req, res) {
 
 
 
-
-
-
+// Serve Static Assets
+//Mount the express.static() middleware to the path /public with app.use(). The absolute path to the assets folder is __dirname + /public.
+app.use("/public", express.static(__dirname + "/public"));
 
 
 
