@@ -25,9 +25,11 @@ app.get("/", function (req, res) {
 app.use("/public", express.static(__dirname + "/public"));
 
 
-
-
-
+// Serve JSON on a Specific Route
+// Serve the object {"message": "Hello json"} as a response, in JSON format, to GET requests to the /json route. Then point your browser to your-app-url/json, you should see the message on the screen.
+app.get("/json", function (req, res) {
+    res.json({ "message": "Hello json" });
+});
 
 
 
