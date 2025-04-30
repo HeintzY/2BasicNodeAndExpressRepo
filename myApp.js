@@ -79,6 +79,12 @@ app.get("/:word/echo", function (req, res) {
 });
 
 
+//10:
+// Get Query Parameter Input from the Client
+// Build an API endpoint, mounted at GET /name. Respond with a JSON document, taking the structure { name: 'firstname lastname'}. The first and last name parameters should be encoded in a query string e.g. ?first=firstname&last=lastname.
+app.get("/name", function (req, res) {
+    res.json({ name: req.query.first + " " + req.query.last });
+});
 
 
 
