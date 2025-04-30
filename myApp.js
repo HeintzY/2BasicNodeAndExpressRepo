@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 require('dotenv').config(); //*6
+let bodyParser = require('body-parser'); //*11
 
 //7:
 // Implement a Root-Level Request Logger Middleware
@@ -11,6 +12,10 @@ app.use(function (req, res, next) {
 });
 
 
+//11:
+// Use body-parser to Parse POST Requests
+// body-parser has already been installed and is in your project's package.json file. require it at the top of the myApp.js file and store it in a variable named bodyParser. The middleware to handle URL encoded data is returned by bodyParser.urlencoded({extended: false}). Pass the function returned by the previous method call to app.use(). As usual, the middleware must be mounted before all the routes that depend on it.
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 //1:
