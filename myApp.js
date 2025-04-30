@@ -92,6 +92,13 @@ app.get("/name", function (req, res) {
 });
 
 
+//12:
+// Get Data from POST Requests
+// Respond with the same JSON object as before: {name: 'firstname lastname'}. Test if your endpoint works using the html form we provided in the app frontpage.
+app.post("/name", function (req, res) {
+    res.json({ name: req.body.first + " " + req.body.last });
+});
+
 
 
 module.exports = app;
